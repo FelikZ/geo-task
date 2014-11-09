@@ -5,6 +5,7 @@ RUN \
     apt-get install -y php5-mcrypt php5-intl git && \
     php5enmod mcrypt && \
     php5enmod intl && \
+    a2enmod rewrite && \
     composer self-update && \
     composer install && \
     chown -R www-data tmp && \
