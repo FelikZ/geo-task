@@ -1,5 +1,7 @@
+boot2docker stop
 sh sh/docker_open_port.sh 9292
 sh sh/docker_open_port.sh 9200
+sh sh/docker_open_port.sh 8080
 boot2docker up
 docker run -d \
   -p 9292:9292 \
@@ -18,4 +20,9 @@ wget http://fa-technik.adfc.de/code/opengeodb/DE.tab
 cat DE.tab | /opt/logstash/bin/logstash -f opengeodb.conf
 
 docker build -t php .
-docker run --name php -d -p 80:80 php
+docker run -d \
+  --name php \
+  -p 8080:80 \
+  --link logstash:elasticdb \
+  -v ~/test/geo-task/:/data \
+  php
