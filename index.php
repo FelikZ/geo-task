@@ -13,4 +13,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+ini_set('display_errors', 1);
 require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';
+
+

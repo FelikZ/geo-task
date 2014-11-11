@@ -24,6 +24,7 @@ if (php_sapi_name() === 'cli-server') {
 		return false;
 	}
 }
+ini_set('display_errors', 1);
 require dirname(__DIR__) . '/config/bootstrap.php';
 
 use Cake\Network\Request;
