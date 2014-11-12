@@ -9,7 +9,7 @@ You have [Linux](https://docs.docker.com/installation/ubuntulinux/) or [Mac OS X
 Steps:
 
 1. `git clone https://github.com/FelikZ/geo-task geo-task && cd geo-task`
-2. `sudo chmod +x setup.sh && ./setup.sh`
+2. `sudo chmod +x install.sh && ./install.sh`
 3. [localhost:8080](http://localhost:8080/)
 
 If you will run this on OS X / Windows, be sure to install [virtualbox](https://www.virtualbox.org/) and [boot2docker](http://boot2docker.io/) tool in order to run docker.
