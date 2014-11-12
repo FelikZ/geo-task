@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo "Waiting for elastic search"
+until $(curl --output /dev/null --silent --fail localhost:9200/_nodes?pretty); do
+    printf '.'
+    sleep 1
+done
+echo 'done.'
+
+cd "/data/geo"
+
+echo "Creating index..."
+curl -X PUT --output /dev/null --silent http://localhost:9200/opengeodb/ || echo "FAIL."
+echo "done"
+
+echo "Mapping scheme..."
+curl -X PUT --output /dev/null --silent --data @mapping.json http://localhost:9200/opengeodb/locality/_mapping || echo "FAIL."
+echo "done"
+
+if [ ! -f 'complete.lock' ]; then
+    cat DE.tab | /opt/logstash/bin/logstash -f opengeodb.conf
+    cat AT.tab | /opt/logstash/bin/logstash -f opengeodb.conf
+    cat BE.tab | /opt/logstash/bin/logstash -f opengeodb.conf
+    cat CH.tab | /opt/logstash/bin/logstash -f opengeodb.conf
+    cat LI.tab | /opt/logstash/bin/logstash -f opengeodb.conf
+    cat LU.tab | /opt/logstash/bin/logstash -f opengeodb.conf
+    cat PLZ.tab | /opt/logstash/bin/logstash -f opengeodb.conf
+    echo 1 > complete.lock
+fi
+

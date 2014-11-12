@@ -1,0 +1,67 @@
+{
+    "locality": {
+      "properties": {
+        "@timestamp": {
+          "type": "date",
+          "format": "dateOptionalTime"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "ags": {
+          "type": "string"
+        },
+        "area": {
+          "type": "long"
+        },
+        "host": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "invalid": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "location": {
+          "type" : "geo_point"
+        },
+        "lonlat": {
+          "type": "double"
+        },
+        "message": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "name_uc": {
+          "type": "string"
+        },
+        "of": {
+          "type": "string"
+        },
+        "official_description": {
+          "type": "string"
+        },
+        "phone_area_code": {
+          "type": "string"
+        },
+        "plate": {
+          "type": "string"
+        },
+        "population": {
+          "type": "long"
+        },
+        "type": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      }
+    }
+}

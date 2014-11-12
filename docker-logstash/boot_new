@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nohup /app/bin/setup_geo_db &
+/app/bin/boot
