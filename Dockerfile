@@ -8,9 +8,10 @@ RUN \
     a2enmod rewrite
 
 ADD apache_defaults.conf /etc/apache2/sites-available/000-default.conf
+ADD . /app/
 
 RUN \
-    chown -R www-data /app/tmp && \
+    mkdir -p /app/tmp && chown -R www-data /app/tmp && \
     mkdir -p /app/logs && chown -R www-data /app/logs && \
     composer self-update && \
     composer install
