@@ -10,8 +10,8 @@ RUN \
 ADD apache_defaults.conf /etc/apache2/sites-available/000-default.conf
 
 RUN \
+    chown -R www-data /app/tmp && \
+    mkdir -p /app/logs && chown -R www-data /app/logs && \
     composer self-update && \
-    composer install && \
-    chown -R www-data tmp && \
-    mkdir -p logs && chown -R www-data logs
+    composer install
 

@@ -1,5 +1,5 @@
-git clone https://github.com/FelikZ/geo-task geo-task
-cd geo-task
+# git clone https://github.com/FelikZ/geo-task geo-task
+# cd geo-task
 
 # boot2docker stop
 # sh sh/docker_open_port.sh 9292
