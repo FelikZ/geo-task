@@ -5,7 +5,7 @@ Test task to textkernel.nl
 
 **Preferred method**
 
-You have [Linux](https://docs.docker.com/installation/ubuntulinux/) or [Mac OS X](https://docs.docker.com/installation/mac/) with installed [docker](http://docker.io)
+You have [Linux](https://docs.docker.com/installation/ubuntulinux/) or [Mac OS X](https://docs.docker.com/installation/mac/) with installed [docker](http://docker.io) (version **1.3.x**, [ubuntu](http://www.ubuntuupdates.org/ppa/docker))
 Steps:
 
 1. `git clone https://github.com/FelikZ/geo-task geo-task && cd geo-task`
