@@ -1,7 +1,7 @@
 geo-task
 ========
 
-Test task to textkernel.nl
+Test task
 
 **Preferred method**
 
